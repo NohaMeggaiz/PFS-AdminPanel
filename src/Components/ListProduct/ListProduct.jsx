@@ -1,8 +1,17 @@
 import React, { useEffect, useState } from "react";
 import './ListProduct.css'
-import cross_icon from '../../assets/cross_icon.png'
+import cross_icon from '../../assets/cross_icon.png';
+import upicon from '../../assets/up_icon.png'
+import { useNavigate } from "react-router-dom";
+import { Link } from 'react-router-dom';
+
+
 
 const ListProduct = ()=>{
+
+  
+  
+
 
   const [allproducts,setAllProducts]=useState([]);
 
@@ -28,6 +37,7 @@ const ListProduct = ()=>{
     await fetchInfo();
   }
 
+ 
   return(
     <div className="ListProduct ">
       <h1>All Products List</h1>
@@ -37,6 +47,7 @@ const ListProduct = ()=>{
         <p>Old Price</p>
         <p>New Price</p>
         <p>Category</p>
+        
         <p>Remove</p>
       </div>
       <div className="listproduct-allproducts">
@@ -49,6 +60,12 @@ const ListProduct = ()=>{
                 <p>${product.new_price}</p>
                 <p>{product.category}</p>
                 <img onClick={()=>{remove_product(product.id)}} className="listproduct-remove-icon" src={cross_icon} alt="" />
+                
+                <div className="icon-link">
+                  <Link to={`/update/${product.id}`} >
+                    <img className="listproduct-update-icon" src={upicon} alt="" />
+                  </Link>
+                </div>
               </div>
               <hr />
               </>

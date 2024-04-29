@@ -37,6 +37,14 @@
     overflow-y: auto;
 }
 
+.listproduct-update-icon {
+    width: 50px; /* Adjust the width to your preference */
+    height: 50px; /* Adjust the height to your preference */
+    cursor: pointer; /* Add pointer cursor for interaction */
+    margin-left: 10px; /* Adjust the margin to separate the icons from the text */
+    vertical-align: middle; /* Align icons vertically with the text */
+  }
+
 @media (max-width:800) {
     .ListProduct{
         box-sizing: border-box;
